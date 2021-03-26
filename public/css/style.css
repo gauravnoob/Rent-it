@@ -1,0 +1,24 @@
+body{
+    background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+  min-height: 50%;
+  font-family: 'helvetica neue';
+  text-align: center;
+  
+}
+div{
+  margin: 8% 0px 0px 45%;
+  text-align: justify;
+  font-size: x-large;
+}
+input{
+  text-align: justify;
+  height: 20pt;
+}
+#button{
+  background-color:slategrey;
+  margin-top: 20px;
+  width: 100px;
+  
+  
+}

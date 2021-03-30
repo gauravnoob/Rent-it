@@ -40,7 +40,11 @@ app.post("/", async function (req, res) {
     });
     console.log(userInformation);
     const token = await userInformation.generateAuthToken();
-    console.log("the token part" + token);
+    console.log("the token part   " + token);
+    res.cookie("jwt", token,{
+      expires:new Date(Date.now() + 5000),
+      httpOnly:true
+    });
   
     const registered = await userInformation.save();
     console.log(req.body.email);

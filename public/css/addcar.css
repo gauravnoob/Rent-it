@@ -1,0 +1,16 @@
+h1{
+    color: burlywood;
+    text-align: center;
+}
+.addcar{
+   border: solid red;
+  font-size: 200%;
+  text-align: center;
+}  
+.labelValue{
+    height: 5%;
+    width: 200px;
+}
+#submit:hover{
+    color:red;
+}

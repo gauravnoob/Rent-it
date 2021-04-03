@@ -1,0 +1,51 @@
+<%- include('partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/addcar.css">
+    <h1>Add your available car Here</h1>
+    <div class="addcar">
+        <form action="/addcar" method="POST">
+            <label class="labelName" for="cars">Choose a car company: </label><br>
+            <select class="labelValue" name="cars" id="cars">
+                <option value="Maruti Suzuki">Maruti Suzuki</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Tata">Tata</option>
+                <option value="Toyota">Toyota</option>
+            </select><br>
+            <label class="labelName" for="carName">Car Model Name: </label><br>
+            <input class="labelValue" type="text" name="carname" placeholder="Enter Car name" required><br>
+            <label class="labelName" for="manufacturedYear">Manufactured Year: </label><br>
+            <input class="labelValue" type="text" name="manufacturedYear" placeholder="Enter Year" required><br>
+            <label class="labelName" for="From">From: </label><br>
+            <input class="labelValue" type="datetime-local" id="carAvailableStartTime" name="carAvailableStartTime"
+                min="2021-02-07T00:00" max="2025-06-14T00:00"><br>
+            <label class="labelName" for="To">To: </label><br>
+            <input class="labelValue" type="datetime-local" id="carAvailableEndTime" name="carAvailableEndTime"
+                min="2021-01-07T00:00" max="2025-06-14T00:00"><br><br>
+            <input class="labelValue" id="submit" type="submit" name='submit'>
+        </form>
+        <script>
+            function correct(c) {
+                if (c.toString().length == 1) {
+                    c = "0" + c;
+                }
+                return c;
+            }
+            const date = new Date();
+            let d = date.getFullYear();
+            let c = date.getMonth();
+            c = c + 1;
+            c = correct(c);
+            d = d + "-" + c;
+            c = date.getDate();
+            c = correct(c);
+            d = d + "-" + c + "T";
+            c = date.getHours();
+            c = correct(c);
+            d = d + c + ":";
+            c = date.getMinutes();
+            c = correct(c);
+            d = d + c;
+            document.getElementById("carAvailableStartTime").setAttribute("min", d);
+            document.getElementById("carAvailableEndTime").setAttribute("min", d);
+        </script>
+    </div>
+    <%- include('partials/footer'); %>
